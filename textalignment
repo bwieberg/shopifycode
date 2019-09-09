@@ -1,0 +1,105 @@
+{%- assign text_alignments = section.settings.text_alignment | split: ' ' -%}
+
+ {% for align in text_alignments %}
+<div class="page-width"  style ="text-align: {{ align }};">
+ 
+	{% if section.settings.title-header != blank %}
+  <div class ="section-header heading-bourbon">
+  <h1 class="heading-bourbon" style="margin-bottom: -50px;">{{ section.settings.title-header | escape }}</h1>
+  </div>
+  	{% endif %}
+  <div class="grid grid__item">
+    <span>{% include 'red-titlesquare' %}</span>
+  <p class="heading-bebas"> {{ section.settings.title-sub }}</p>
+  </div>
+ 
+
+</div>
+   {% endfor %}
+
+{% schema %}
+  {
+    "name": "Title Block",
+	"class": "title-block",
+    "settings": [
+        {
+          "id": "title-header",
+          "type": "text",
+          "label": "Section Title"
+        },
+        { 
+		  "id": "title-sub",
+          "type": "text",
+          "label": "Section Description"
+		},
+
+		{
+			"id": "title-position",
+			"type": "select",
+			"label": "Alignment",
+			"options": [
+			{
+				"value": "left",
+				"label": "Left"
+			},
+			{
+				"value": "right",
+				"label": "Right"
+			},
+			{
+				"value": "center",
+				"label": "Center"
+			}
+		  ]
+		},
+
+ {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text alignment",
+      "default": "center center",
+      "options": [
+        {
+          "label":  "Top left",
+          "value": "left top"
+        },
+        {
+          "label":  "Top center",
+          "value": "center top"
+        },
+        {
+          "label":"Top right",
+          "value": "right top"
+        },
+        {
+          "label": "Middle left",
+          "value": "left center"
+        },
+        {
+          "label":  "Middle center",
+          "value": "center center"
+        },
+        {
+          "label":"Middle right",
+          "value": "right center"
+        },
+        {
+          "label": "Bottom left",
+          "value": "left bottom"
+        },
+        {
+          "label":"Bottom center",
+          "value": "center bottom"
+        },
+        {
+          "label":"Bottom right",
+          "value": "right bottom"
+        }
+      ]
+    }
+		
+	]
+  }
+{% endschema %}
+
+
