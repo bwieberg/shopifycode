@@ -33,26 +33,6 @@
           "label": "Section Description"
 		},
 
-		{
-			"id": "title-position",
-			"type": "select",
-			"label": "Alignment",
-			"options": [
-			{
-				"value": "left",
-				"label": "Left"
-			},
-			{
-				"value": "right",
-				"label": "Right"
-			},
-			{
-				"value": "center",
-				"label": "Center"
-			}
-		  ]
-		},
-
  {
       "type": "select",
       "id": "text_alignment",
